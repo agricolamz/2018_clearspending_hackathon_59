@@ -1,12 +1,15 @@
 ---
 title: "Данные для торгового профиля Республики Адыгеи"
+output:
+  html_document:
+    toc: false
 editor_options: 
   chunk_output_type: console
 ---
 
-Данные доступны [здесь]().
+Данные доступны [здесь](https://raw.githubusercontent.com/agricolamz/2018_clearspending_hackathon_59/master/adyghe.csv).
 
-```{r, echo = FALSE}
-DT::datatable(read_csv("adyghe.csv"))
+```{r, echo = FALSE, message=FALSE}
+DT::datatable(readr::read_csv("adyghe.csv"))
 ```
 

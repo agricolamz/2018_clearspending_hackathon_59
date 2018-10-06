@@ -14,6 +14,6 @@ read_csv(files[id]) %>%
   final
 })
 
-final <- final[,-9:10]
+final <- final[,-c(9:10)]
 
 write_csv(final, "../../adyghe.csv", na = "")
