@@ -1,0 +1,12 @@
+---
+title: "Данные для торгового профиля Республики Адыгеи"
+editor_options: 
+  chunk_output_type: console
+---
+
+Данные доступны [здесь]().
+
+```{r, echo = FALSE}
+DT::datatable(read_csv("adyghe.csv"))
+```
+
