@@ -33,11 +33,16 @@ selected_year <- 2013
 df  %>%
   filter(PERIOD_y == selected_year) %>% 
   gather(type, value, STOIM:NETTO) %>% 
-  ggplot(aes(x = PERIOD, y = value))+
+  mutate(type = if_else(type == "NETTO", "Нетто", "Стоимость"),
+         label = paste0(NAME, ": ", value)) %>% 
+  ggplot(aes(x = PERIOD, y = value, z = label))+
   geom_point()+
   facet_grid(PERIOD_y~type, scales = "free")+
   scale_y_log10()+
-  labs(x = "", y = "деньги (лог. шкала)")
+  labs(x = "", y = "стоимоть закупки (лог. шкала)")->
+  plot
+
+plotly::ggplotly(plot, tooltip = "z")
 ```
 
 ## 2014
