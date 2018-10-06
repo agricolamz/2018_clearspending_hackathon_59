@@ -16,7 +16,7 @@ output:
     highlight: pygments
     toc: yes
     toc_position: right
-    toc_depth: 2
+    toc_depth: 1
     toc_float: yes
     smooth_scroll: no
     df_print: paged
